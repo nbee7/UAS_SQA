@@ -31,7 +31,7 @@ public class RegisterFeatureValidSteps {
         driver.findElement(By.xpath("//*[@id=\"sylius_customer_registration_lastName\"]")).sendKeys("rohman");
         driver.findElement(By.xpath("//*[@id=\"sylius_customer_registration_email\"]")).sendKeys("dana@gmail.com");
         driver.findElement(By.xpath("//*[@id=\"sylius_customer_registration_phoneNumber\"]")).sendKeys("02121212121");
-        driver.findElement(By.xpath("//*[@id=\"sylius_customer_registration_user_plainPassword_first\"]")).sendKeys("11111");
+        driver.findElement(By.xpath("//*[@id=\"sylius_customer_registration_user_plainPassword_first\"]")).sendKeys("1111");
         driver.findElement(By.xpath("//*[@id=\"sylius_customer_registration_user_plainPassword_second\"]")).sendKeys("1111");
     }
     @And("click on register button")
@@ -42,7 +42,9 @@ public class RegisterFeatureValidSteps {
     @Then("user is success registration")
     public void user_is_success_registration() {
         System.out.println("user is success registration");
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[1]/div/div")).isDisplayed();
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[2]/div/div")).isDisplayed();
+        driver.close();
+        driver.quit();
     }
 
 }
