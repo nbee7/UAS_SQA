@@ -30,7 +30,7 @@ public class LoginFeatureValidSteps {
     public void user_enters_valid_username_and_password() {
         System.out.println("user enters valid username and password");
         driver.findElement(By.xpath("//*[@id=\"_username\"]")).sendKeys("shop@example.com");
-        driver.findElement(By.xpath("//*[@id=\"_password\"]")).sendKeys(" sylius");
+        driver.findElement(By.xpath("//*[@id=\"_password\"]")).sendKeys("sylius");
     }
 
     @And("click on login button")
@@ -42,7 +42,7 @@ public class LoginFeatureValidSteps {
     @Then("user is navigated to the home page")
     public void user_is_navigated_to_the_home_page() {
         System.out.println("user is navigated to the home page");
-        driver.findElement(By.xpath("\"user is navigated to the home page\"")).isDisplayed();
+        driver.findElement(By.xpath("//*[@id=\"menu\"]/div/a[2]")).isDisplayed();
         driver.close();
         driver.quit();
     }
