@@ -22,7 +22,7 @@ public class LoginFeatureValidSteps {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(40));
 
-        System.out.println("user is on google search page");
+        System.out.println("user is on login page");
         driver.navigate().to("https://master.demo.sylius.com/en_US/login");
     }
 
