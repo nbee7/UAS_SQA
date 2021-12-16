@@ -29,7 +29,7 @@ public class RegisterFeatureValidSteps {
         System.out.println("user enters valid register data");
         driver.findElement(By.xpath("//*[@id=\"sylius_customer_registration_firstName\"]")).sendKeys("dana");
         driver.findElement(By.xpath("//*[@id=\"sylius_customer_registration_lastName\"]")).sendKeys("rohman");
-        driver.findElement(By.xpath("//*[@id=\"sylius_customer_registration_email\"]")).sendKeys("dana@gmail.com");
+        driver.findElement(By.xpath("//*[@id=\"sylius_customer_registration_email\"]")).sendKeys("dana12@gmail.com");
         driver.findElement(By.xpath("//*[@id=\"sylius_customer_registration_phoneNumber\"]")).sendKeys("02121212121");
         driver.findElement(By.xpath("//*[@id=\"sylius_customer_registration_user_plainPassword_first\"]")).sendKeys("1111");
         driver.findElement(By.xpath("//*[@id=\"sylius_customer_registration_user_plainPassword_second\"]")).sendKeys("1111");
