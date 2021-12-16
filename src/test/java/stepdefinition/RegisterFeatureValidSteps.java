@@ -8,6 +8,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
 
@@ -16,8 +17,16 @@ public class RegisterFeatureValidSteps {
 
     @Given("user is on register page")
     public void user_is_on_register_page() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+
+        ChromeOptions options = new ChromeOptions();
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        options.addArguments("--start-maximized");
+        options.addArguments("--headless");
+        options.addArguments("--window-size=1366,768");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--disable-gpu");
+        driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(40));
 
@@ -29,7 +38,7 @@ public class RegisterFeatureValidSteps {
         System.out.println("user enters valid register data");
         driver.findElement(By.xpath("//*[@id=\"sylius_customer_registration_firstName\"]")).sendKeys("dana");
         driver.findElement(By.xpath("//*[@id=\"sylius_customer_registration_lastName\"]")).sendKeys("rohman");
-        driver.findElement(By.xpath("//*[@id=\"sylius_customer_registration_email\"]")).sendKeys("danangan122@gmail.com");
+        driver.findElement(By.xpath("//*[@id=\"sylius_customer_registration_email\"]")).sendKeys("dan122@gmail.com");
         driver.findElement(By.xpath("//*[@id=\"sylius_customer_registration_phoneNumber\"]")).sendKeys("02121212121");
         driver.findElement(By.xpath("//*[@id=\"sylius_customer_registration_user_plainPassword_first\"]")).sendKeys("1111");
         driver.findElement(By.xpath("//*[@id=\"sylius_customer_registration_user_plainPassword_second\"]")).sendKeys("1111");

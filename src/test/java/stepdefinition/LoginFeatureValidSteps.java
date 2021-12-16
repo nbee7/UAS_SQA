@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
 
@@ -17,8 +18,15 @@ public class LoginFeatureValidSteps {
 
     @Given("user is on login page")
     public void user_is_on_login_page() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        options.addArguments("--start-maximized");
+        options.addArguments("--headless");
+        options.addArguments("--window-size=1366,768");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--disable-gpu");
+        driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(40));
 
